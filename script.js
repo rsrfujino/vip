@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headings = document.querySelectorAll(".explosive-heading");
     const images = document.querySelectorAll(".hidden-image");
     const audio = document.getElementById("voice001");
+    const yamakoshi = document.getElementById("voice002");
     const menuaudio = document.getElementById("menuvoice001");
 
     const menuImagePaths = [
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Menu002.png",
         "Menu003.png",
         "Menu004.png",
+        "Menu005.png",
     ];
 
     const menuVoicePaths = [
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "MenuVoice002.mp3",
         "MenuVoice003.mp3",
         "MenuVoice004.mp3",
+        "MenuVoice005.mp3",
     ];
 
     // 見出しのアニメーション
@@ -26,10 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }, index * 4000); // 各見出しを順番に表示するための遅延時間
     });
 
-    // 10分に一回リロード
+    // ランダム表示
+    setInterval(() => {
+        images[2].style.opacity = 1;
+        setTimeout(() => {
+            images[2].style.opacity = 0;
+            yamakoshi.play();
+        }, 5000); // 5秒後フェードアウト
+    }, 30000); 
+
+
     setInterval(() => {
         location.reload(); // ページをリロードする
-    }, 600000); 
+    }, 900000); 
 
     let currentIndex = 1;
     function changeImage() {
@@ -64,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuaudio.play();
 
             // 30秒ごとに画像を切り替えるタイマーを設定
-            setInterval(changeImage, 10000);  // 30秒ごとにchangeImage関数を呼び出す
+            setInterval(changeImage, 20000);  // 30秒ごとにchangeImage関数を呼び出す
         }, 2000); 
     }, headings.length * 4000 + 5000); // 2番目の画像を表示するための遅延時間
 
