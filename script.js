@@ -8,13 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuImagePaths = [
         "Menu001.png",
         "Menu002.png",
-        "Menu003.png"
+        "Menu003.png",
+        "Menu004.png",
     ];
 
     const menuVoicePaths = [
         "MenuVoice001.mp3",
         "MenuVoice002.mp3",
-        "MenuVoice003.mp3"
+        "MenuVoice003.mp3",
+        "MenuVoice004.mp3",
     ];
 
     // 見出しのアニメーション
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 10分に一回リロード
-    setTimeout(() => {
+    setInterval(() => {
         location.reload(); // ページをリロードする
     }, 600000); 
 
