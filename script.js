@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
         images[2].style.opacity = 1;
         yamakoshi.play();
+
         setTimeout(() => {
             images[2].style.opacity = 0;
         }, 5000); // 5秒後フェードアウト
