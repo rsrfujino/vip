@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "MenuVoice005.mp3",
     ];
 
+    // スリープBlock
+    var noSleep = new NoSleep();
+    noSleep.enable();
+
     // 見出しのアニメーション
     headings.forEach((heading, index) => {
         setTimeout(() => {
