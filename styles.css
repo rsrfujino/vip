@@ -17,17 +17,6 @@ body {
     height: 100%;
 }
 
-.dummy {
-    & video {
-        width: 1px;
-        height: 1px;
-    }
-    position: absolute;
-    z-index: 0;
-    width: 1px;
-    height: 1px;
-}
-
 .explosive-heading {
     position: absolute;
     top: 50%;
