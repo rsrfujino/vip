@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Menu003.png",
         "Menu004.png",
         "Menu005.png",
+        "Menu006.png",
     ];
 
     const menuVoicePaths = [
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "MenuVoice003.mp3",
         "MenuVoice004.mp3",
         "MenuVoice005.mp3",
+        "MenuVoice006.mp3",
     ];
 
     // スリープBlock
