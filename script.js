@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Menu001.png",
         "Menu002.png",
         "Menu003.png",
-        "Menu004.png",
+        // "Menu004.png",
         "Menu005.png",
-        "Menu006.png",
+        // "Menu006.png",
     ];
 
     const menuVoicePaths = [
