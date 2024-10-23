@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     const bgm = document.getElementById("bgm");
 
-    const displayDurations = [60000, 35000, 30000]; // 各メディアの表示時間（ミリ秒）
+    const displayDurations = [60000, 32000, 30000]; // 各メディアの表示時間（ミリ秒）
     let currentIndex = 0;
 
     // スリープBlock
@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function changeMedia() {
         // すべてのメディア要素を非表示にする
         mediaElements.forEach((media) => {
+            if (media.tagName === "VIDEO") {
+                media.pause();
+                media.currentTime = 0;
+            }
             media.style.opacity = 0;
         });
 
@@ -29,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             mediaElements[currentIndex].style.opacity = 1;
             if (mediaElements[currentIndex].tagName === "VIDEO") {
+                mediaElements[currentIndex].currentTime = 0;
+                mediaElements[currentIndex].loop = true; 
                 mediaElements[currentIndex].play();
             }
 
@@ -42,4 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 初回のメディア表示
     changeMedia();
+
+    setTimeout(() => {
+        location.reload();
+    }, 6000000);
 });
