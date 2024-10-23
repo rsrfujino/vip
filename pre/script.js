@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     noSleep.enable();
 
     // BGMを再生
-    bgm.play();
-
+    setTimeout(() => {
+        bgm.play();
+    }, 2000);
+   
     function changeMedia() {
         // すべてのメディア要素を非表示にする
         mediaElements.forEach((media) => {
