@@ -1,0 +1,98 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.explosive-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  font-size: 8em;
+  color: #fff;
+  opacity: 0;
+  animation: headingAnimation 4s ease-in-out forwards,
+    shadowAnimation 1s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.8),
+    0 0 60px rgba(255, 0, 0, 0.8), 0 0 80px rgba(255, 0, 0, 0.8),
+    0 0 100px rgba(255, 0, 0, 0.8), 0 0 120px rgba(255, 0, 0, 0.8),
+    0 0 140px rgba(255, 0, 0, 0.8), 0 0 160px rgba(255, 0, 0, 0.8);
+}
+
+.explosive-heading:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.explosive-heading:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.hidden-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: contain; /* 画像全体を表示する */
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+  z-index: -1;
+}
+
+.hidden-image:nth-child(2) {
+  background-color: rgba(0, 0, 0, 0.7); /* �w�i�ɓ����x��ݒ� */
+}
+
+@keyframes headingAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+@keyframes shadowAnimation {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.8),
+      0 0 60px rgba(255, 0, 0, 0.8), 0 0 80px rgba(255, 0, 0, 0.8),
+      0 0 100px rgba(255, 0, 0, 0.8), 0 0 120px rgba(255, 0, 0, 0.8),
+      0 0 140px rgba(255, 0, 0, 0.8), 0 0 160px rgba(255, 0, 0, 0.8);
+  }
+
+  50% {
+    text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 60px rgba(255, 0, 0, 0.8),
+      0 0 90px rgba(255, 0, 0, 0.8), 0 0 120px rgba(255, 0, 0, 0.8),
+      0 0 150px rgba(255, 0, 0, 0.8), 0 0 180px rgba(255, 0, 0, 0.8),
+      0 0 210px rgba(255, 0, 0, 0.8), 0 0 240px rgba(255, 0, 0, 0.8);
+  }
+}
